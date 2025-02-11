@@ -479,14 +479,14 @@ The `enforce_max_depth(node, max_depth, current_depth)` function limits the maxi
 ### Genetic Programming Algorithm
 
 The function `run_genetic_programming(x, y, population_size, generations, elite_size, max_depth)` implements a Genetic Programming (GP) algorithm to find the best symbolic expression that approximates the data (`x, y`). The process occurs in the following phases, repeated for a number equal to the variable `generations`:
-1- Initialization of the population with the Ramped Half-and-Half method, which creates half of the population with trees of depth 2 and half of the population with trees of depth 4;
-2- calculation of the fitness function for each tree and sorting (`fitness(individual, x, y)`);
-3- selection of the best individuals (in a number defined by elite_size) and saving the best tree of the generation in hall_of_fame, which keeps track of the best trees of each generation;
-4- selection of k random parents and the two individuals with the lowest MSE are chosen (`tournament_selection(population, x, y, k)`);
-5- crossover between the two parents (`crossover(parent1, parent2)`);
-6- mutation of the individual (`mutate(individual, mutation_rate)`);
-7- depth control (`enforce_max_depth(node, max_depth, current_depth)`);
-8- adding the generated offspring to the initial population;
+- 1.Initialization of the population with the Ramped Half-and-Half method, which creates half of the population with trees of depth 2 and half of the population with trees of depth 4;
+- 2.calculation of the fitness function for each tree and sorting (`fitness(individual, x, y)`);
+- 3.selection of the best individuals (in a number defined by elite_size) and saving the best tree of the generation in hall_of_fame, which keeps track of the best trees of each generation;
+- 4.selection of k random parents and the two individuals with the lowest MSE are chosen (`tournament_selection(population, x, y, k)`);
+- 5.crossover between the two parents (`crossover(parent1, parent2)`);
+- 6.mutation of the individual (`mutate(individual, mutation_rate)`);
+- 7.depth control (`enforce_max_depth(node, max_depth, current_depth)`);
+- 8.adding the generated offspring to the initial population;
 
 ![lab4_12](report_images/lab4_12.png)
 
@@ -632,7 +632,7 @@ MSE = 839853.2588713064
 
 #### Problem 1 Test:
 
-MSE = 0.00000
+MSE = 7.125940794232773e-34
 
 Best expression found = sin(x0)
 
@@ -664,11 +664,11 @@ MSE = 0.01973
 
 #### Problem 5 Test:
 
-Best expression found = ((-8.599 + ((-9.087 + -1.618) * (x1 + 2.066))) / exp(((x1 / x1) * (5.382 * 6.624))))
+Best expression found = (((((log10(x1) * -9.013) * ((0.309 - -6.337) - sin(x0))) * cos(((x0 / x0) * (-3.695 / x0)))) * sin(log10(x0))) / (exp((-5.465 / -0.213)) - -(3.879)))
+
+MSE = 5.417638189152223e-18
 
 ![Test 5 Pop 10000 Gen 100 Depth 6](report_images/test5_pop10000_gen100_depth6_1.png)
-
-MSE = 0.00000
 
 #### Problem 6 Test:
 
@@ -694,15 +694,35 @@ MSE = 1272443.2040473882
 
 ![Test 8 Pop 10000 Gen 100 Depth 6](report_images/test8_pop10000_gen100_depth6.png)
 
+### Expressions found
+
+![Expression found 1](report_images/lab4_15.png)
+
+![Expression found 2](report_images/lab4_16.png)
+
 ### Final Result Summary
 
 | Problem | Best_MSE | Expression Found |
 |---------|----------|------------------|
-| 1       | 0.00000 | sin(x0) |
+| 1       | 7.125940794232773e-34 | sin(x0) |
 | 2       | 10000000000.00000 | (((exp(((x0 * 4.865) * exp(x1))) * (((-1.527 + -9.650) * (x2 + x1)) / x2)) * abs((5.823 + x0))) - ((x2 - -2.865) / (-9.485 + 5.293))) |
 | 3       | 0.82978 | ((((x0 * x0) + (x2 * -4.816)) + (x2 - -3.753)) + ((x0 * x0) + (log10(((2.369 + x1) + -(x1))) + ((x1 * x1) * -(x1))))) |
 | 4       | 0.01973 | (((cos(x1) * 6.830) + sqrt(sqrt(((-9.009 + x0) + abs(x1))))) + sqrt(sqrt(-8.538))) |
-| 5       | 0.00000 | ((-8.599 + ((-9.087 + -1.618) * (x1 + 2.066))) / exp(((x1 / x1) * (5.382 * 6.624)))) |
+| 5       |5.417638189152223e-18 | (((((log10(x1) * -9.013) * ((0.309 - -6.337) - sin(x0))) * cos(((x0 / x0) * (-3.695 / x0)))) * sin(log10(x0))) / (exp((-5.465 / -0.213)) - -(3.879))) |
 | 6       | 0.00274 | ((((1.396 * x1) + (x0 / -1.418)) - (x1 / -3.781)) - ((exp(-9.845) * (6.017 - x0)) * (((x1 - x0) * ((-4.666 + x0) + (3.425 * -1.858))) * (8.596 - x0)))) |
 | 7       | 255.77055328942862 | ((abs(4.439) * exp((x1 * x0))) + ((((abs(x0) * abs(x1)) + (abs(x0) * sin(x1))) * cos(((x1 - x0) * (x0 + -7.844)))) * exp((x1 * x0)))) |
 | 8       | 1272443.2040473882 | (abs((x5 * ((9.915 * x5) * ((x4 / x4) * (x5 + x5))))) * x5) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
