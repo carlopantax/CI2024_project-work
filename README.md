@@ -1,8 +1,6 @@
 # CI2024_project-work
 ## Lab4 - Project Work
 
-## Lab4 - Project Work
-
 The Project Work goal is implementing a Genetic Programming (GP) algorithm for the [Symbolic Regression](https://en.wikipedia.org/wiki/Symbolic_regression), that is, an evolutionary method that tries to find a mathematical function that best approximates a set of data. The algorithm relies on parse trees to represent mathematical expressions.
 
 ### Loading Data and Tree Node Definition
